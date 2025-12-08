@@ -86,6 +86,138 @@ class QuizSeeder extends Seeder
                         'answers' => null,
                         'correct_answer' => 'Paryż',
                     ],
+                    [
+                        'type' => 'multiple_choice',
+                        'question' => 'Jaki jest najwyższy szczyt świata?',
+                        'answers' => ['K2', 'Mount Everest', 'Kangchendzonga'],
+                        'correct_answer' => '1',
+                    ],
+                    [
+                        'type' => 'text',
+                        'question' => 'Ile kontynentów jest na Ziemi?',
+                        'answers' => null,
+                        'correct_answer' => '7',
+                    ],
+                ],
+            ],
+            [
+                'title' => 'JavaScript – podstawy',
+                'description' => 'Sprawdź swoją wiedzę z podstaw JavaScriptu.',
+                'questions' => [
+                    [
+                        'type' => 'multiple_choice',
+                        'question' => 'Które słowo kluczowe służy do deklarowania zmiennej, której wartość może się zmienić?',
+                        'answers' => ['const', 'let', 'var'],
+                        'correct_answer' => '1',
+                    ],
+                    [
+                        'type' => 'text',
+                        'question' => 'Jakiego operatora używamy do sprawdzania równości wartości i typu w JavaScript?',
+                        'answers' => null,
+                        'correct_answer' => '===',
+                    ],
+                    [
+                        'type' => 'multiple_choice',
+                        'question' => 'Co oznacza skrót DOM?',
+                        'answers' => ['Data Object Model', 'Document Order Model', 'Document Object Model'],
+                        'correct_answer' => '2',
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Python – podstawy',
+                'description' => 'Sprawdź swoją wiedzę z podstaw Pythona.',
+                'questions' => [
+                    [
+                        'type' => 'multiple_choice',
+                        'question' => 'Które słowo kluczowe służy do definiowania funkcji w Pythonie?',
+                        'answers' => ['func', 'def', 'function'],
+                        'correct_answer' => '1',
+                    ],
+                    [
+                        'type' => 'text',
+                        'question' => 'Jakiego operatora używamy do potęgowania w Pythonie?',
+                        'answers' => null,
+                        'correct_answer' => '**',
+                    ],
+                    [
+                        'type' => 'multiple_choice',
+                        'question' => 'Co to jest PEP 8?',
+                        'answers' => ['Wersja Pythona', 'Zbiór wytycznych stylowych dla kodu Pythona', 'Rodzaj błędu w Pythonie'],
+                        'correct_answer' => '1',
+                    ],
+                ],
+            ],
+            [
+                'title' => 'C# – podstawy',
+                'description' => 'Sprawdź swoją wiedzę z podstaw C#.',
+                'questions' => [
+                    [
+                        'type' => 'multiple_choice',
+                        'question' => 'Które słowo kluczowe służy do deklarowania stałej w C#?',
+                        'answers' => ['const', 'readonly', 'static'],
+                        'correct_answer' => '0',
+                    ],
+                    [
+                        'type' => 'text',
+                        'question' => 'Jak nazywa się platforma .NET, która umożliwia uruchamianie aplikacji C# na różnych systemach operacyjnych?',
+                        'answers' => null,
+                        'correct_answer' => '.NET Core',
+                    ],
+                    [
+                        'type' => 'multiple_choice',
+                        'question' => 'Co to jest LINQ?',
+                        'answers' => ['Language Integrated Query', 'Lightweight Internet Networking Queries', 'Logical Interface Naming Quality'],
+                        'correct_answer' => '0',
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Muzyka – ogólna wiedza',
+                'description' => 'Quiz dla fanów muzyki.',
+                'questions' => [
+                    [
+                        'type' => 'multiple_choice',
+                        'question' => 'Który instrument jest potocznie nazywany "królową instrumentów"?',
+                        'answers' => ['Fortepian', 'Skrzypce', 'Organy'],
+                        'correct_answer' => '0',
+                    ],
+                    [
+                        'type' => 'text',
+                        'question' => 'Który kompozytor napisał słynne "Cztery pory roku"?',
+                        'answers' => null,
+                        'correct_answer' => 'Vivaldi',
+                    ],
+                    [
+                        'type' => 'multiple_choice',
+                        'question' => 'Co to jest a capella?',
+                        'answers' => ['Śpiew bez akompaniamentu instrumentów', 'Technika gry na gitarze', 'Rodzaj tańca'],
+                        'correct_answer' => '0',
+                    ],
+                ],
+            ],
+            [
+                'title' => 'Filmy – ogólna wiedza',
+                'description' => 'Quiz dla kinomanów.',
+                'questions' => [
+                    [
+                        'type' => 'multiple_choice',
+                        'question' => 'Który film zdobył Oscara w kategorii "Najlepszy Film" w 1995 roku?',
+                        'answers' => ['Forrest Gump', 'Pulp Fiction', 'Skazani na Shawshank'],
+                        'correct_answer' => '0',
+                    ],
+                    [
+                        'type' => 'text',
+                        'question' => 'Jak nazywa się reżyser filmu "Incepcja"?',
+                        'answers' => null,
+                        'correct_answer' => 'Christopher Nolan',
+                    ],
+                    [
+                        'type' => 'multiple_choice',
+                        'question' => 'Który aktor wcielił się w rolę Jamesa Bonda w najwięcej filmach?',
+                        'answers' => ['Sean Connery', 'Roger Moore', 'Daniel Craig'],
+                        'correct_answer' => '1',
+                    ],
                 ],
             ],
         ];

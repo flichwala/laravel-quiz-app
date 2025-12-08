@@ -70,3 +70,22 @@ h1, h2, h3, h4, h5 {
     opacity: 1 !important;
     filter: none !important;
 }
+
+/* Specific fix for validation icons in text inputs: remove checkmark, keep border */
+/* Ensure the parent has position: relative for feedback to be contained */
+.form-group {
+    position: relative;
+}
+
+.form-control.is-valid,
+.form-control.is-invalid {
+    padding-right: .75rem; /* Remove extra padding for icon */
+    background-image: none !important; /* Remove the validation icon */
+}
+
+/* Remove default Bootstrap valid/invalid feedback icons from the generated content */
+.form-control.is-valid:focus,
+.form-control.is-invalid:focus {
+    border-color: inherit; /* Prevent focus border change */
+    box-shadow: none; /* Prevent focus shadow */
+}
