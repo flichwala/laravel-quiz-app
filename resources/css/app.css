@@ -52,3 +52,21 @@ body {
 h1, h2, h3, h4, h5 {
     font-weight: 700;
 }
+
+/* Fix for unintended brightness/transparency on multiple-choice answers */
+/* Targeting labels and input states within form-check */
+.form-check-input:checked ~ .form-check-label,
+.form-check-input:focus ~ .form-check-label,
+.form-check-label {
+    background-color: transparent !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    filter: none !important; /* Remove any brightness/contrast filters */
+}
+
+/* Ensure the custom radio button itself doesn't become transparent */
+.form-check-input:checked,
+.form-check-input:focus {
+    opacity: 1 !important;
+    filter: none !important;
+}

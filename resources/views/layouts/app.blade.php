@@ -2,6 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Quizy Laravel')</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +12,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm mb-5">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="{{ route('home') }}">Quizy Master</a>
+            <a class="navbar-brand fw-bold" href="{{ route('home') }}">Quiz Master</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>

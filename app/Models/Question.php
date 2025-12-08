@@ -11,6 +11,7 @@ class Question extends Model
     use HasFactory;
 
     protected $fillable = [
+        'type',
         'question',
         'answers',
         'correct_answer',
