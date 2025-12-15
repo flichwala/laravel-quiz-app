@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Quiz;
+use App\Models\QuizResult;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class QuizController extends Controller
 {
@@ -28,8 +30,13 @@ class QuizController extends Controller
 
     public function submit(Request $request, Quiz $quiz)
     {
+        $validated = $request->validate([
+            'answers' => ['required', 'array'],
+            'answers.*' => ['required', 'string'],
+        ]);
+
         $quiz->load('questions');
-        $submittedAnswers = $request->input('answers', []);
+        $submittedAnswers = $validated['answers'];
         $results = [];
         $correctCount = 0;
 
@@ -62,11 +69,29 @@ class QuizController extends Controller
             ];
         }
 
+        // Save the result to the database
+        QuizResult::create([
+            'user_id' => Auth::id(),
+            'quiz_id' => $quiz->id,
+            'score' => $correctCount,
+            'total' => $quiz->questions->count(),
+        ]);
+
         return response()->json([
             'score' => $correctCount,
             'total' => $quiz->questions->count(),
             'results' => $results,
         ]);
+    }
+
+    public function history()
+    {
+        $results = QuizResult::where('user_id', Auth::id())
+            ->with('quiz')
+            ->latest()
+            ->paginate(10);
+
+        return view('quizzes.history', ['results' => $results]);
     }
 }
 
