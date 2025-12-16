@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\QuizController as AdminQuizController;
+use App\Http\Controllers\Admin\QuestionController as AdminQuestionController;
 
 Route::get('/', [QuizController::class, 'home'])->name('home'); // Now points to QuizController@home
 
@@ -23,5 +25,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/quizzes/{quiz}/submit', [QuizController::class, 'submit'])->name('quizzes.submit');
     Route::get('/my-results', [QuizController::class, 'history'])->name('quizzes.history');
 });
+
+Route::middleware(['auth', 'is_admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', function () {
+        return redirect()->route('admin.quizzes.index');
+    });
+    Route::resource('quizzes', AdminQuizController::class);
+    Route::resource('quizzes.questions', AdminQuestionController::class)->shallow();
+});
+
 
 require __DIR__.'/auth.php';

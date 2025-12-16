@@ -15,6 +15,11 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @if(Auth::check() && Auth::user()->name === 'admin')
+                        <x-nav-link :href="route('admin.quizzes.index')" :active="request()->routeIs('admin.quizzes.index')">
+                            {{ __('Admin') }}
+                        </x-nav-link>
+                    @endif
                     <x-nav-link :href="route('quizzes.history')" :active="request()->routeIs('quizzes.history')">
                         {{ __('Moje Wyniki') }}
                     </x-nav-link>
@@ -83,6 +88,11 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            @if(Auth::check() && Auth::user()->name === 'admin')
+                <x-responsive-nav-link :href="route('admin.quizzes.index')" :active="request()->routeIs('admin.quizzes.index')">
+                    {{ __('Admin') }}
+                </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->
